@@ -56,17 +56,27 @@ const fmtUnit = (price, unit) => price === 0 ? "" : `/${unit}`;
 
 // ── Shared UI ──────────────────────────────────────────────────
 
-const Logo = ({ size = 48, ringColor = C.greenBright, coreColor = C.bg }) => {
-  const r = size / 2, gap = r * 0.18, d = r * 2 + gap;
-  const outer = r, ring = r * 0.6, inner = r * 0.38;
+const Logo = ({ size = 44, ringColor = C.bg, coreColor = C.greenBright }) => {
+  // Two bold OO rings side by side — dark on green background
+  const r = size / 2;
+  const gap = r * 0.22;
+  const W = r * 2 * 2 + gap;
+  const H = r * 2;
+  const cx1 = r;
+  const cx2 = r + r * 2 + gap;
+  const outerR  = r;
+  const ringR   = r * 0.72;
+  const innerR  = r * 0.42;
   return (
-    <svg width={d * 2} height={r * 2} viewBox={`0 0 ${d * 2} ${r * 2}`} fill="none">
-      <circle cx={r} cy={r} r={outer} fill={coreColor}/>
-      <circle cx={r} cy={r} r={ring}  fill={ringColor}/>
-      <circle cx={r} cy={r} r={inner} fill={coreColor}/>
-      <circle cx={r + d} cy={r} r={outer} fill={coreColor}/>
-      <circle cx={r + d} cy={r} r={ring}  fill={ringColor}/>
-      <circle cx={r + d} cy={r} r={inner} fill={coreColor}/>
+    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} fill="none">
+      {/* Left O */}
+      <circle cx={cx1} cy={r} r={outerR} fill={ringColor}/>
+      <circle cx={cx1} cy={r} r={ringR}  fill={coreColor}/>
+      <circle cx={cx1} cy={r} r={innerR} fill={ringColor}/>
+      {/* Right O */}
+      <circle cx={cx2} cy={r} r={outerR} fill={ringColor}/>
+      <circle cx={cx2} cy={r} r={ringR}  fill={coreColor}/>
+      <circle cx={cx2} cy={r} r={innerR} fill={ringColor}/>
     </svg>
   );
 };
@@ -151,7 +161,7 @@ const Landing = ({ onEnter }) => (
           display:"flex", alignItems:"center", justifyContent:"center",
           margin:"0 auto", boxShadow:`0 0 32px ${C.greenBright}44`,
         }}>
-          <Logo size={18} ringColor={C.bg} coreColor={C.greenBright}/>
+          <Logo size={26} ringColor={C.bg} coreColor={C.greenBright}/>
         </div>
       </div>
       <h1 style={{ color:C.text, fontSize:38, margin:"0 0 4px", letterSpacing:-1 }}>Moovers</h1>
@@ -214,7 +224,7 @@ const Home = ({ setScreen }) => {
             width:42, height:42, borderRadius:12, background:C.greenBright,
             display:"flex", alignItems:"center", justifyContent:"center",
           }}>
-            <Logo size={10} ringColor={C.bg} coreColor={C.greenBright}/>
+            <Logo size={13} ringColor={C.bg} coreColor={C.greenBright}/>
           </div>
         </div>
       </div>
