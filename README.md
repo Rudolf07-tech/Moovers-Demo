@@ -12,7 +12,7 @@ Moovers uses refrigerated tricycles and a smart logistics platform to move peris
 
 | File | Description |
 |------|-------------|
-| `moovers-website.html` | Marketing website |
+| `index.html` | Marketing website |
 | `moovers.html` | Mobile app UI demo |
 
 ## Run Locally
@@ -21,7 +21,7 @@ Just open either file in a browser. No install needed.
 
 ## Deploy
 
-Drag `moovers-website.html` onto [Netlify Drop](https://app.netlify.com/drop) — live in 30 seconds.
+Drag `index.html` onto [Netlify Drop](https://app.netlify.com/drop) — live in 30 seconds.
 
 ## Contact
 📧 rudolfafena07@gmail.com · 💬 +233 24 744 7640
